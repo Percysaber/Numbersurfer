@@ -36,7 +36,7 @@ class QuestionGenerator:
         b = random.randint(10, 99)
         return self._add_or_subtract(a, b, op)
 
-    # ---------- ระดับยาก: (a ? b) ? c มีวงเล็บ ----------
+    # ---------- ระดับยาก: (a +- b) */ c มีวงเล็บ ----------
     def _hard(self):
         inner_op = random.choice(['+', '-'])
         outer_op = random.choice(['x', '/'])
