@@ -139,7 +139,9 @@ class Game:
         if not hits:
             return
         # ระหว่างเลื่อนเลน ตัวละครอาจแตะ 2 บาน จึงตัดสินจากเลนที่ผู้เล่นอยู่
-        chosen = next(g for g in self.gates if g.lane == self.player.lane)
+        chosen = next((g for g in self.gates if g.lane == self.player.lane), None)
+        if chosen is None:                      
+            return
         correct_gate = next(g for g in self.gates if g.is_correct)
         above_player = (self.player.rect.centerx, PLAYER_Y - 150)   # เหนือประตู ไม่ทับกัน
 
