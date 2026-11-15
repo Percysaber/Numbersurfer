@@ -36,10 +36,8 @@
 | effects.py | FloatingText, GateFlash, Particle (Sprite) | ข้อความลอย, ประตูเรืองแสง, ประกาย | มอร์แกน |
 | sound_manager.py | SoundManager | เพลงและเสียงประกอบ | มอร์แกน |
 | menu.py | MenuScreen, Button, MenuSymbol | หน้าเลือกระดับ + คะแนนสูงสุด + แอนิเมชัน | มอร์แกน |
-| tools/make_sounds.py | - | สร้างไฟล์เสียงทั้งหมดด้วยโค้ด | มอร์แกน |
 
 ## เสียง
-ไฟล์ใน sounds/ สร้างจาก `python tools/make_sounds.py` (ไม่มีปัญหาลิขสิทธิ์)
 ถ้าเครื่องไม่มีการ์ดเสียง เกมยังเล่นได้ตามปกติ
 ปรับความดังได้ที่ `MUSIC_VOLUME` และ `EFFECT_VOLUMES` ใน sound_manager.py
 
