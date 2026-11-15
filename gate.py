@@ -7,7 +7,7 @@ GATE_HEIGHT = 70
 
 
 class Gate(pygame.sprite.Sprite):
-
+    font = None                                   # ฟอนต์ที่ทุกประตูใช้ร่วมกัน
     def __init__(self, window, lane, value, is_correct):
         super().__init__()
         self.window = window
@@ -19,8 +19,9 @@ class Gate(pygame.sprite.Sprite):
         width = LANE_W - 30
         self.image = pygame.Surface((width, GATE_HEIGHT), pygame.SRCALPHA)
         pygame.draw.rect(self.image, GATE_COLOR, self.image.get_rect(), border_radius=12)
-        font = pygame.font.Font(None, 52)
-        text = font.render(str(value), True, WHITE)
+        if Gate.font is None:                     # สร้างครั้งแรกครั้งเดียว
+            Gate.font = pygame.font.Font(None, 52)
+        text = Gate.font.render(str(value), True, WHITE)
         self.image.blit(text, text.get_rect(center=self.image.get_rect().center))
 
         self.rect = self.image.get_rect(centerx=lane_center_x(lane), bottom=0)
