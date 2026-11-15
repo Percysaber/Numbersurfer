@@ -42,4 +42,4 @@
 ปรับความดังได้ที่ `MUSIC_VOLUME` และ `EFFECT_VOLUMES` ใน sound_manager.py
 
 ## Demo video
-(ใส่ลิงก์ YouTube ที่นี่)
+https://youtube.com/shorts/jl6BY7mXvCY
