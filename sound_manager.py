@@ -33,11 +33,14 @@ class SoundManager:
             self.sounds[name] = self._load(os.path.join(SOUND_DIR, name + '.wav'), volume)
 
     def _load(self, path, volume):
-        if self.enabled and os.path.exists(path):
-            sound = pygame.mixer.Sound(path)
-            sound.set_volume(volume)
-            return sound
-        return None
+        if not self.enabled:
+            return None
+        if not os.path.exists(path):
+            print('Sound file not found:', path)    # เตือนว่าหาไฟล์ไม่เจอ
+            return None
+        sound = pygame.mixer.Sound(path)
+        sound.set_volume(volume)
+        return sound
 
     def _play(self, name):
         sound = self.sounds.get(name)
